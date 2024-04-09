@@ -62,3 +62,11 @@ http://localhost:5173/
 login: lucas
 password: lucas
 ```
+
+---
+
+# Deploy
+
+I used Render to deploy the Backend and Netlify to deploy the Frontend. The link below is where the web application is running right now:
+ 
+[Online Website](https://food-explorer-lucas.netlify.app/)
