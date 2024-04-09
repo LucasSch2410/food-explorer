@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Heart, Minus, Plus, CaretRight, Pencil } from "@phosphor-icons/react";
 import { useSize } from '../../hooks/useSize'
 import { Button } from "../../components/Button";

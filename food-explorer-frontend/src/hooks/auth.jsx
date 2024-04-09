@@ -7,6 +7,7 @@ export const AuthContext = createContext({});
 function AuthProvider({ children }) {
     const [data, setData] = useState({})
     const navigate = useNavigate()
+    const [cart, setCart] = useState(0)
 
     async function signIn({email, password}){
         try {
@@ -45,7 +46,7 @@ function AuthProvider({ children }) {
     }, [])
 
     return(
-        <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
+        <AuthContext.Provider value={{ signIn, signOut, user: data.user, cart: cart, setCart }}>
             {children}
         </AuthContext.Provider>
     )

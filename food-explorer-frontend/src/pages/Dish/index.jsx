@@ -8,11 +8,13 @@ import { Container, MainContainer } from "./styles"
 import { useEffect, useState } from "react"
 import { api } from "../../services/api"
 import { SideMenu } from "../../components/SideMenu"
+import { useAuth } from "../../hooks/auth"
 
-export function Dish({ requests, setRequests }) {
+export function Dish() {
     const windowsize = useSize()
     const [data, setData] = useState(null)
     const [menuIsOpen, setMenuIsOpen] = useState(false)
+    const { cart, setCart } = useAuth()
 
     const { id } = useParams()
 
@@ -30,9 +32,9 @@ export function Dish({ requests, setRequests }) {
             <SideMenu menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
 
             <Container>
-                {windowsize > 1024 ? <HeaderDesktop requests={requests}/> : <HeaderMobile requests={requests} setMenu={setMenuIsOpen}/>}
+                {windowsize > 1024 ? <HeaderDesktop requests={cart}/> : <HeaderMobile requests={cart} setMenu={setMenuIsOpen}/>}
                 {data &&
-                    <DishItem item={data} setRequests={setRequests}/>
+                    <DishItem item={data} setRequests={setCart}/>
                 }
                 <Footer/>
             </Container>

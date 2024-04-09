@@ -44,8 +44,8 @@ export const Logo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    min-width: 200px;
+    gap: 1.2rem;
+    min-width: 220px;
     cursor: pointer;
     text-align: end;
 

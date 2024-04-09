@@ -7,11 +7,13 @@ import { Section } from "../../components/Section";
 import { Footer } from "../../components/Footer";
 import { api } from "../../services/api";
 import { SideMenu } from "../../components/SideMenu";
+import { useAuth } from "../../hooks/auth";
 
-export function Home({ requests, setRequests }) {
+export function Home() {
     const windowsize = useSize()
     const [Dishes, setDishes] = useState([])
     const [menuIsOpen, setMenuIsOpen] = useState(false);
+    const { cart, setCart } = useAuth()
 
     useEffect(() => {
         async function getDishes() {
@@ -34,7 +36,7 @@ export function Home({ requests, setRequests }) {
         <SideMenu menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
 
         <Container>
-            {windowsize > 1024 ? <HeaderDesktop requests={requests}/> : <HeaderMobile requests={requests} setMenu={setMenuIsOpen}/>}
+            {windowsize > 1024 ? <HeaderDesktop requests={cart}/> : <HeaderMobile requests={cart} setMenu={setMenuIsOpen}/>}
             <Main>
                 <div className="container-flavor">
                     <div className="flavor-image">
@@ -50,13 +52,13 @@ export function Home({ requests, setRequests }) {
                 </div>
             </Main>
 
-            <Section title="Refeições" card={Dishes} category={"ref"} setRequests={setRequests}>
+            <Section title="Refeições" card={Dishes} category={"ref"} setRequests={setCart}>
             </Section>
 
-            <Section title="Sobremesas" card={Dishes} category={"sob"} setRequests={setRequests}>
+            <Section title="Sobremesas" card={Dishes} category={"sob"} setRequests={setCart}>
             </Section>
 
-            <Section title="Bebidas" card={Dishes} category={"beb"} setRequests={setRequests}>
+            <Section title="Bebidas" card={Dishes} category={"beb"} setRequests={setCart}>
             </Section>
 
             <Footer />
