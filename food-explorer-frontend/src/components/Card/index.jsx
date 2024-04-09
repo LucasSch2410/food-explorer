@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom"
+import { api } from "../../services/api";
 
 export function Card({ item, setRequests }) {
     const windowsize = useSize()
@@ -42,7 +43,7 @@ export function Card({ item, setRequests }) {
             </div>
 
             <div className="item-image" onClick={() => navigate(`/dish/${id}`)}> 
-                <img src={"http://localhost:3333/files/" + photo} alt="" />
+                <img src={"https://food-explorer-7t9g.onrender.com/files/" + photo} alt="" />
 
             </div>
 

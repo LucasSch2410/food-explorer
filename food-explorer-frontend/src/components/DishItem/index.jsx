@@ -41,7 +41,7 @@ export function DishItem({ item, setRequests }) {
 
             <div className="dishItem-container">
                 <div className="image-container">
-                    <img src={`http://localhost:3333/files/${item.photo}`} alt="" />
+                    <img src={`https://food-explorer-7t9g.onrender.com/files/${item.photo}`} alt="" />
                 </div>
                 <div className="text-dish">
                     <h2>{item.name}</h2>
