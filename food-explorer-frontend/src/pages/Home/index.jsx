@@ -41,9 +41,9 @@ export function Home() {
                 <div className="container-flavor">
                     <div className="flavor-image">
                         {windowsize > 1024 ?
-                        <img src="../../src/assets/home-image.png" alt="" /> 
+                        <img src="home-image.png" alt="" /> 
                         :
-                        <img src="../../src/assets/home-image-mobile.png" alt="" />}
+                        <img src="home-image-mobile.png" alt="" />}
                     </div>
                     <div className="flavor-text">
                         <h1>Sabores inigualáveis</h1>
