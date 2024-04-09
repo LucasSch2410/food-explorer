@@ -55,6 +55,10 @@ $ npm install
 # Start the server
 $ npm run dev
 
-#You can access the application at this URL:
-    http://localhost:5173/
+# You can access the application at this URL:
+http://localhost:5173/
+
+# Admin user:
+login: lucas
+password: lucas
 ```
